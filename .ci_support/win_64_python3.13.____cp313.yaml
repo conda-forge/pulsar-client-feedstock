@@ -9,7 +9,7 @@ channel_targets:
 cxx_compiler:
 - vs2019
 libpulsar:
-- 3.7.0
+- 3.7.1
 pin_run_as_build:
   python:
     min_pin: x.x
