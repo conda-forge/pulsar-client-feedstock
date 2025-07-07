@@ -19,7 +19,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '18'
 libpulsar:
-- 3.7.1
+- 3.7.2
 macos_machine:
 - x86_64-apple-darwin13.4.0
 pin_run_as_build:
