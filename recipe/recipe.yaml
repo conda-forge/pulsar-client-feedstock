@@ -1,0 +1,56 @@
+schema_version: 1
+
+context:
+  name: pulsar-client
+  version: 3.8.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/apache/pulsar-client-python/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: e82e1a5ae51b260cc33491bc1771e89d74b0459bb39cf0a3fc4df6c29c7184ae
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - if: not win
+      then: sed
+    - if: win
+      then: m2-sed
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: python
+  host:
+    - python
+    - pip
+    - setuptools
+    - libpulsar
+    - pybind11
+  run:
+    - python
+    - certifi
+
+tests:
+  - python:
+      imports:
+        - pulsar
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Apache Pulsar Python client library
+  homepage: https://github.com/apache/pulsar-client-python
+
+extra:
+  recipe-maintainers:
+    - xhochy
