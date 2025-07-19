@@ -1,5 +1,5 @@
 {% set name = "pulsar-client" %}
-{% set version = "3.7.0" %}
+{% set version = "3.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/apache/pulsar-client-python/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 2b8082b8e29341f3ff523577d024c0b5eccb4f65623482fa08e864dee10edbd9
+  sha256: e82e1a5ae51b260cc33491bc1771e89d74b0459bb39cf0a3fc4df6c29c7184ae
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
