@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pulsar-client
-  version: "3.9.0"
+  version: "3.10.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://github.com/apache/pulsar-client-python/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 7f1e293cee8d3a5f41ec0ab5bddc91ae87dcf150f71616d6027b4821543d3b5d
+  sha256: 2e64cf49ed8493274ee808eab216d2f85930989fa185fd456858fcc0ed87ab21
 
 build:
   number: 0
